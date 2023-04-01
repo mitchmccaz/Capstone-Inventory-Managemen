@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-const AddPost = (props) => {
+const AddDisplay = (props) => {
 
     const [itemNumber, setName]=useState('');
     const [USD, setUSD] = useState('');
@@ -33,4 +33,4 @@ const AddPost = (props) => {
     );
 }
 
-export default AddPost;
+export default AddDisplay;
