@@ -1,27 +1,28 @@
 import React, { useState } from 'react';
-
+import Display from './Components/Display/AddDisplay/AddDisplay'
 import './App.css';
 
 function App() {
 
-  const [entries, setEntries] = useState([{itemNumber:"8675309", weight:"5500", usd:"4024.37"}, {itemNumber:"954001", weight:"700", usd:"472.11"}, {itemNumber:"19340002", weight:"12978", usd:"6845.09"}])
+  const [products, setProducts] = useState([{itemNumber:"8675309", weight:"5500", usd:"4024.37"}, {itemNumber:"954001", weight:"700", usd:"472.11"}, {itemNumber:"19340002", weight:"12978", usd:"6845.09"}])
 
-  function addNewEntry(entry){
-    let tempEntries =[...entries, entry];
+  function addNewProduct(Product){
+    let tempProducts =[...product, product];
  
-    setEntries(tempEntries);
+    setProducts(tempProducts);
   }
   return(
     <div className='container-fluid'>
       <div className='row'>
         <div className='col-lg-6'>
           <div className='border-box'>
-        <AddPost addNewEntryProperty={addNewEntry} />
+        <addNewProduct addNewProduct={addNewProduct} />
+        
           </div>
         </div>
         <div className='col-lg-6'>
           <div className='border-box'>
-      <DisplayPost parentEntries={entries} />
+          <DisplayItem parentProducts= {setProducts} />
       </div>
       </div>
       </div>

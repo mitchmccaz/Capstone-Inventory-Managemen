@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-const AddDisplay = (props) => {
+const AddItem = (props) => {
 
     const [itemNumber, setName]=useState('');
     const [USD, setUSD] = useState('');
@@ -10,14 +10,14 @@ const AddDisplay = (props) => {
     function handleSubmit(event){
         event.preventDefault();
         
-        let newEntry = {
+        let newProduct = {
            itemNumber : itemNumber,
            usd : usd,
            weight: weight,
            post: post
         };
-        console.log(newEntry);
-        props.addNewEntryProperty(newEntry)
+        console.log(newProduct);
+        props.addNewProductProperty(newProduct)
     }
     return (  
         <form onSubmit={handleSubmit}>
@@ -33,4 +33,4 @@ const AddDisplay = (props) => {
     );
 }
 
-export default AddDisplay;
+export default AddItem;
