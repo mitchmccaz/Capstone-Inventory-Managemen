@@ -13,7 +13,7 @@ def get_all_products(request):
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
-def get_products_by_videoid(request):
+def get_products_by_itemid(request):
     item_id_string = request.query_params.get('item_id')
     print(item_id_string)
     products = products.objects.filter(item_id=item_id_string)

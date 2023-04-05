@@ -33,14 +33,14 @@ class App extends Component {
     }
 
 
-    deleteItem = async (songId) => {
+    deleteItem = async (itemId) => {
         let response = await axios.delete('http://127.0.0.1:8000/api/inventory_data/' + itemId + '/')
         this.getAllItems(); 
         return response.status; 
          
     }
 
-    createItem = async (newSong) => {
+    createItem = async (newItem) => {
         let response = await axios.post('http://127.0.0.1:8000/api/inventory_data/', newItem)
         this.getAllItems(); 
         return response.status; 

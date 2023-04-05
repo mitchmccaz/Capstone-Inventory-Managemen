@@ -1,3 +1,9 @@
+import AddItem from "./AddDisplay/AddDisplay";
+
+
+
+
+
 const DisplayPost = (props) => {
     return (  
         <table>

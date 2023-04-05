@@ -1,36 +1,54 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 const AddItem = (props) => {
+  const [newProduct, setNewProduct] = useState({
+    itemNumber: "",
+    usd: "",
+    weight: "",
+    post: "",
+  });
 
-    const [itemNumber, setName]=useState('');
-    const [USD, setUSD] = useState('');
-    const [weight, setWeight] = useState('');
-    
-    
-    function handleSubmit(event){
-        event.preventDefault();
-        
-        let newProduct = {
-           itemNumber : itemNumber,
-           usd : usd,
-           weight: weight,
-           post: post
-        };
-        console.log(newProduct);
-        props.addNewProductProperty(newProduct)
-    }
-    return (  
-        <form onSubmit={handleSubmit}>
-            <label>Item Number</label>
-            <input type='itemNumber'value = {itemNumber} onChange={(event) => setItemNumber(event.target.value)} />
-            <label>USD</label>
-            <input type='usd' value = {USD} onChange={(event) => setUSD(event.target.value) } />
-            <label> Weight </label>
-            <input type ='weight' value ={weight} onChange={(event) => setWeight(event.target.value)} />
-            <button type = 'submit'>Save</button>
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setNewProduct((prevProduct) => {
+      return {
+        ...prevProduct,
+        [name]: value,
+      };
+    });
+  }
 
-        </form>
-    );
-}
+  function handleSubmit(event) {
+    event.preventDefault();
+    props.addNewProductProperty(newProduct);
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>Item Number</label>
+      <input
+        type="text"
+        name="itemNumber"
+        value={newProduct.itemNumber}
+        onChange={handleChange}
+      />
+      <label>USD</label>
+      <input
+        type="text"
+        name="usd"
+        value={newProduct.usd}
+        onChange={handleChange}
+      />
+      <label>Weight</label>
+      <input
+        type="text"
+        name="weight"
+        value={newProduct.weight}
+        onChange={handleChange}
+      />
+      <button type="submit">Save</button>
+    </form>
+  );
+};
 
 export default AddItem;
