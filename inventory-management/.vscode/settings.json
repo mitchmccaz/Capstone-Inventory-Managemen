@@ -1,5 +1,6 @@
 {
     "python.analysis.extraPaths": [
-        "./inventory-management/inventory_data(backend)/data/material_data"
+        "./inventory-management/inventory_data(backend)/data/material_data",
+        "./inventory-management/inventory_data(backend)/data"
     ]
 }

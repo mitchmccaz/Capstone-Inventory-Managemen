@@ -4,6 +4,7 @@ import Display from './Display/AddDisplay/AddDisplay';
 import Display from './Display/Search/Search';
 import Display from './Display/Display';
 import axios from "axios";
+import TableHeader from './TableHeader/TableHeader';
 
 class App extends Component {
     constructor(props) {

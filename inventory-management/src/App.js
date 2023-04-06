@@ -17,12 +17,13 @@ function App() {
       <div className='row'>
         <div className='col-lg-6'>
           <div className='border-box'>
-        <addNewProduct addNewProduct={addNewProduct} />
-        
+            <button onClick={()=> addNewProduct({itemNumber:1, weight: 3, usd: 3})}>
+              Add New Product
+            </button>
           </div>
         </div>
-        <div className='col-lg-6'>
-          <div className='border-box'>
+      <div className='col-lg-6'>
+      <div className='border-box'>
       <ul>
         {products.map((product) => (
           <li key={product.itemNumber}>
