@@ -1,6 +1,5 @@
 from django.urls import path, include
-from material_data import views
-
+import views from settings 
 
 urlpatterns=[
     path('', views.item_id),
