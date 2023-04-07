@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import DisplayEntries from './Components/Display Entries/DisplayEntries';
 import AddEntryForm from './Components/AddEntry/AddEntryForm';
 import EntriesChartTracker from './Components/EntriesChartTracker/EntriesChartTracker';
-import ".//App.css"
-import "./index.css"
+import ".//App.css";
+import "./index.css";
 
 function App() {
 
