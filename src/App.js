@@ -1,41 +1,40 @@
 import React, { useState } from 'react';
-import Display from './Components/Display/AddDisplay/AddDisplay'
-import './App.css';
-import AddItem from './Components/Display/AddDisplay/AddDisplay';
+import DisplayEntries from './Components/Display Entries/DisplayEntries';
+import AddEntryForm from './Components/AddEntry/AddEntryForm';
+import EntriesChartTracker from './Components/EntriesChartTracker/EntriesChartTracker';
+import ".//App.css"
+import "./index.css"
 
 function App() {
-  const [products, setProducts] = useState([{itemNumber:"8675309", weight:"5500", usd:"4024.37"}, {itemNumber:"954001", weight:"700", usd:"472.11"}, {itemNumber:"19340002", weight:"12978", usd:"6845.09"}])
 
-  function addNewProduct(Product){
-    let tempProducts =[...Product, Product];
- 
-    setProducts(tempProducts);
+  const[entries, setEntries] = useState([{weight: 1245, date: '11-23-2021', usd: 987.12}, {weight: 1736, date: '11-24-2021', usd: 1099.22}])
+  
+  function addNewEntry(entry){
+
+    let tempEntries = [...entries, entry];
+
+    setEntries(tempEntries);
   }
-  
-  return(
-    <div className='container-fluid'>
-      <div className='row'>
-        <div className='col-lg-6'>
-          <div className='border-box'>
-            <button onClick={()=> addNewProduct({itemNumber:1, weight: 3, usd: 3})}>
-              Add New Product
-            </button>
-          </div>
+
+
+
+  return (
+   <div className = 'container-fluid'>
+      <div className= 'row'>
+        <h3 style={{margin:"1em"}}>Inventory<small className='text-muted' >Tracker</small></h3>
+        <div clasName = 'col-md-6'>
+          <div className = 'border-box'>
+            <DisplayEntries parentEntries={entries} />
+            <AddEntryForm addNewEntryProperty={addNewEntry}/>
         </div>
-      <div className='col-lg-6'>
-      <div className='border-box'>
-      <ul>
-        {products.map((product) => (
-          <li key={product.itemNumber}>
-            Item Number: {product.itemNumber}, Weight: {product.weight}, USD: {product.usd}
-          </li>
-        ))}
-      </ul>
       </div>
+        <div clasName = 'col-md-6'>
+          <div className='border-box'>
+            <EntriesChartTracker parentEntries= {entries}/>
+          </div>
+        </div>      
       </div>
-      </div>
-     </div>
-  
+    </div>
   );
 }
 
