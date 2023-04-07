@@ -3,7 +3,7 @@ body {
     line-height: 1.25;
   }
   table {
-    border: 1px solid #04bef7;
+    border: 1px solid #0388b1;
     border-collapse: collapse;
     table-layout: fixed;
     width: 100%;
@@ -14,7 +14,7 @@ body {
     margin: .5em 0 .75em;
   }
   table tr {
-    border: 1px solid #3d09f7;
+    border: 1px solid #3700ff;
     padding: .35em;
   }
   table tr:nth-child(even) {
