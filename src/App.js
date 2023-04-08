@@ -4,6 +4,7 @@ import AddEntryForm from './Components/AddEntry/AddEntryForm';
 import EntriesChartTracker from './Components/EntriesChartTracker/EntriesChartTracker';
 import ".//App.css";
 import "./index.css";
+import "./Components/Search/search";
 
 function App() {
 
