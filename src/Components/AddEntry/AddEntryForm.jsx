@@ -9,6 +9,8 @@ const AddEntryForm = (props) => {
     const [date, setDate] = useState('')
     const [usd, setUSD] =useState('')
     const [searchTerm, setSearchTerm] = useState('')
+    const [totalUSD, setTotalUSD] = useState (0)
+    const[totalWeight, setTotalWeight] = useState(0)
     const handleChange = (event) => {
         setSearchTerm(event.target.value);
       }
@@ -28,6 +30,8 @@ const AddEntryForm = (props) => {
         };
         console.log(newEntry);
         props.addNewEntryProperty(newEntry)
+            setTotalUSD(totalUSD + parseFloat(usd));
+            setTotalWeight(totalWeight+ parseFloat(weight));
     }
     
     return ( 
@@ -45,6 +49,15 @@ const AddEntryForm = (props) => {
                 <input type='usd' value={usd} class="form-control" onChange={(event)=> setUSD(event.target.value)}/>
 
             </div>
+            <div className='form-group'>
+                <label>Total USD</label>
+                <input type="usd" value={totalUSD} readOnly/>
+                <div className='form-group'>
+                <label>Total Weight</label>
+                <input type="weight" value={totalWeight} readOnly />
+            </div>
+
+            </div>
             <div>
                 <input type="text" placeholder="Search" value={searchTerm} onChange={handleChange} />
                 <button onClick={handleSearch}>Search</button>
@@ -56,3 +69,17 @@ const AddEntryForm = (props) => {
 }
  
 export default AddEntryForm;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

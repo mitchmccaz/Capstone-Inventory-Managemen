@@ -2,7 +2,8 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework import status
-from models import Product
+import Product from material
+
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
@@ -17,7 +18,7 @@ def get_products_by_itemid(request):
     item_id_string = request.query_params.get('item_id')
     print(item_id_string)
     products = products.objects.filter(item_id=item_id_string)
-    serializer = Product.Serializers(products, many=True)
+    serializer = Product.Serializer(products, many=True)
     return Response(serializer.data)
 
 
